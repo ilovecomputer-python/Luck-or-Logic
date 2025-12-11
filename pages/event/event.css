@@ -43,7 +43,6 @@ nav {
     max-height: 60px;
 }
 
-
 .nav-links {
     display: flex;
     list-style: none;
@@ -106,7 +105,6 @@ nav {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-
 }
 
 .hero-content p {
@@ -379,7 +377,403 @@ nav {
 }
 
 
+/* Timeline Section */
+.timeline-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 30px;
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.schedule-btn {
+    background: #40e0d0;
+    color: #0a1628;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 30px;
+    transition: all 0.3s;
+}
+
+.schedule-btn:hover {
+    background: #20b2aa;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(64, 224, 208, 0.4);
+}
+
+.timeline-header h2 {
+    font-size: 2.5rem;
+    color: #40e0d0;
+}
+
+.timeline-container {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #40e0d0, rgba(64, 224, 208, 0.3));
+    transform: translateX(-50%);
+}
+
+.timeline-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background: #40e0d0;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(64, 224, 208, 0.8);
+}
+
+.timeline-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background: #40e0d0;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(64, 224, 208, 0.8);
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: #40e0d0;
+}
+
+.timeline-item.left::before {
+    right: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item.right::before {
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item.left {
+    grid-template-columns: 1fr auto;
+}
+
+.timeline-item.right {
+    grid-template-columns: auto 1fr;
+}
+
+.timeline-content {
+    background: rgba(26, 47, 74, 0.5);
+    border: 2px solid rgba(64, 224, 208, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+}
+
+.timeline-content h3 {
+    color: #40e0d0;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    color: #94D58F;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.timeline-content ul {
+    list-style: none;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 2;
+}
+
+.timeline-content ul li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.timeline-content ul li::before {
+    content: '👉';
+    position: absolute;
+    left: 0;
+}
+
+.timeline-image {
+    width: 350px;
+    height: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid rgba(64, 224, 208, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Teams Section */
+.teams-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 30px;
+}
+
+.teams-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.teams-btn {
+    background: #40e0d0;
+    color: #0a1628;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.teams-btn:hover {
+    background: #20b2aa;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(64, 224, 208, 0.4);
+}
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.team-card {
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-card.luck {
+    background: linear-gradient(135deg, #4eff8e 0%, #2d8a5f 100%);
+}
+
+.team-card.logic {
+    background: linear-gradient(135deg, #00d4ff 0%, #0077b6 100%);
+}
+
+.team-image {
+    width: 100%;
+    height: 220px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    margin: 20px 0 15px;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.team-card p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.join-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 40px;
+    border: 2px solid white;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.join-btn:hover {
+    background: white;
+    color: #0a1628;
+}
+
+/* Final Question Section */
+.final-question {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.final-question h3 {
+    font-size: 1.8rem;
+    color: #40e0d0;
+    margin-bottom: 30px;
+}
+
+.questions p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 15px 0;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background: rgba(10, 22, 40, 0.8);
+    border-top: 2px solid rgba(64, 224, 208, 0.3);
+    padding: 60px 0 30px;
+    margin-top: 100px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: #40e0d0;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 1.8rem;
+}
+
+.social-icons a {
+    color: white;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #40e0d0;
+    transform: scale(1.2);
+}
+
+.contact-list {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 2;
+}
+
+.contact-person {
+    margin-bottom: 25px;
+}
+
+.contact-person .name {
+    font-weight: 600;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.contact-person p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.copyright {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(64, 224, 208, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .timeline-item {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item::before {
+        display: none;
+    }
+
+    .timeline-line {
+        display: none;
+    }
+
+    .timeline-image {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .teams-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         grid-template-columns: 1fr;
@@ -409,25 +803,38 @@ nav {
     }
 
     .nav-links a {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
-    nav{
-        max-width: 80%;
+    nav {
+        max-width: 90%;
         height: auto;
-        max-height: 90%;
+        padding: 10px 15px;
     }
 
-    .logo{
+    .logo {
         margin-left: 10px;
     }
     
-    .logo img{
-        max-width: 70%;
+    .logo img {
+        max-width: 50px;
         height: auto;
     }
     
     .decorative-dots {
         display: none;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 1.1rem;
     }
 }
