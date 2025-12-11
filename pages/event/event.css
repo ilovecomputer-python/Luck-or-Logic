@@ -8,7 +8,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(180deg, #0a1628 0%, #1a2f4a 100%);
+    background: radial-gradient(circle 500px at 50% 70%, #1a5563 0%, #1a5563 10%, #0a1628 90%, #0a1628 100%);
+    background-attachment: fixed;
     color: white;
     min-height: 100vh;
 }
@@ -60,6 +61,8 @@ nav {
     font-size: 1.2rem;
 }
 
+
+
 .nav-links a:hover,
 .nav-links a.active {
     background-image: linear-gradient(to right, #10C58B, #00CFF9);
@@ -75,14 +78,15 @@ nav {
     max-width: 1200px;
     margin: 50px auto;
     padding: 0 30px;
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 5rem;
     margin-bottom: 10px;
     background: linear-gradient(90deg, #94D58F 0%, #0CB7F6 55%);
     -webkit-background-clip: text;
@@ -93,7 +97,7 @@ nav {
 }
 
 .hero-content h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-style: italic;
     color: rgba(255, 255, 255, 0.8);
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
@@ -109,62 +113,55 @@ nav {
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 25px;
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 .watch-btn {
-    background: #40e0d0;
+    background: linear-gradient(90deg, #00CFF9 0%, #94D58F 100%);
     color: #0a1628;
     padding: 12px 30px;
     border: none;
-    border-radius: 25px;
-    font-weight: bold;
+    border-radius: 16px;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s;
     font-size: 1rem;
 }
 
 .watch-btn:hover {
-    background: #20b2aa;
+    background: linear-gradient(90deg, #00CFF9 0%, #94D58F 95%);
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(64, 224, 208, 0.4);
 }
 
 .hero-image {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-card {
-    background: linear-gradient(135deg, rgba(64, 224, 208, 0.2) 0%, rgba(157, 127, 255, 0.2) 100%);
-    border: 3px solid rgba(64, 224, 208, 0.5);
-    border-radius: 30px;
-    padding: 20px;
     position: relative;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(90deg, rgba(118, 200, 147, 0.5) 0%,rgba(30, 96, 145, 0.5) 100%);
+    border-radius: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
 }
 
 .image-card img {
-    width: 100%;
-    border-radius: 20px;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 25px;
     display: block;
 }
 
-.sparkle {
-    position: absolute;
-    color: #40e0d0;
-    font-size: 2rem;
-    animation: float 3s ease-in-out infinite;
-}
-
-.sparkle-1 { 
-    top: -10px; 
-    right: 30px; 
-    animation-delay: 0s; 
-}
-
-.sparkle-2 { 
-    top: 20px; 
-    right: -10px; 
-    animation-delay: 1s; 
-}
 
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -173,15 +170,35 @@ nav {
 
 /* Countdown Timer */
 .countdown {
-    background: rgba(26, 47, 74, 0.5);
-    border: 2px solid rgba(64, 224, 208, 0.3);
-    border-radius: 20px;
-    padding: 30px;
-    margin: 50px auto;
-    max-width: 1200px;
+    position: relative;
+    background: rgba(254, 254, 254,0.09);
+    border-radius: 28px;
+    padding: 20px;
     display: grid;
+    margin: 60px auto;        /* ✅ centers horizontally */
+    max-width: 1000px;        /* ✅ sets a centered width limit */
+    width: 100%;   
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    z-index: 0; /* so the pseudo-element sits behind */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Gradient border that respects border-radius */
+.countdown::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* fill the whole box */
+    padding: 2px; /* border thickness */
+    border-radius: inherit;
+    background: linear-gradient(90deg, #10C58B 0%, #00CFF9 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    z-index: -1; /* stays behind content */
 }
 
 .time-box {
@@ -189,45 +206,68 @@ nav {
 }
 
 .time-box .number {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #40e0d0;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: #ffffff;
     display: block;
 }
 
 .time-box .label {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 1);
     font-size: 1rem;
     text-transform: uppercase;
 }
 
 /* Contact Info */
 .contact-info {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 30px;
+    position: relative;
+    max-width: 1000px;
+    margin: 30px auto;      /* centers horizontally */
+    padding: 0px 10px;
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 0;
 }
 
 .contact-btn {
-    background: rgba(26, 47, 74, 0.8);
-    border: 2px solid rgba(64, 224, 208, 0.5);
-    border-radius: 25px;
+    position: relative;
+    background: rgba(254, 254, 254, 0.09);
+    border-radius: 16px;
     padding: 12px 25px;
     color: white;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 10px;
     transition: all 0.3s;
+    width: 300px;
+    z-index: 0; /* so pseudo-element sits behind */
+    overflow: hidden; /* prevents gradient from bleeding */
+}
+
+/* ✅ Gradient border with rounded corners */
+.contact-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px; /* border thickness */
+    border-radius: inherit;
+    background: linear-gradient(90deg, #10C58B 0%, #00CFF9 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    z-index: -1;
 }
 
 .contact-btn:hover {
     background: rgba(64, 224, 208, 0.2);
     transform: translateY(-2px);
 }
+
 
 /* Description Section */
 .description {
@@ -240,7 +280,7 @@ nav {
 .description h3 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #40e0d0;
+    color: #ffffff;
 }
 
 .description p {
@@ -281,6 +321,7 @@ nav {
     border-radius: 20px;
 }
 
+/* Navigation buttons */
 .carousel-nav {
     position: absolute;
     top: 50%;
@@ -288,16 +329,17 @@ nav {
     background: rgba(64, 224, 208, 0.8);
     border: none;
     color: #0a1628;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s;
     z-index: 10;
+    box-shadow: 0 0 10px rgba(64, 224, 208, 0.3);
 }
 
 .carousel-nav:hover {
@@ -313,6 +355,7 @@ nav {
     right: 20px;
 }
 
+/* Dots below carousel */
 .carousel-dots {
     display: flex;
     justify-content: center;
@@ -335,22 +378,6 @@ nav {
     border-radius: 6px;
 }
 
-.decorative-dots {
-    position: absolute;
-    right: 50px;
-    bottom: 50px;
-    display: grid;
-    grid-template-columns: repeat(10, 8px);
-    gap: 8px;
-    opacity: 0.3;
-}
-
-.decorative-dots span {
-    width: 4px;
-    height: 4px;
-    background: #40e0d0;
-    border-radius: 50%;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -361,6 +388,14 @@ nav {
 
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-btn {
+        width: 90%;
+        justify-content: center;
     }
 
     .countdown {
