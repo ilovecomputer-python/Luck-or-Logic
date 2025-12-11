@@ -1,13 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Event Page</title>
-        <link rel="stylesheet" href="event.css">
-    </head>
-    <body>
-        <h1>EVENT</h1>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luck or Logic - Gacha Investation</title>
+    <link rel="stylesheet" href="event.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="/assets/Logo.png" alt="">
+        </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#event" class="active">Event</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#daftar">Daftar</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>LUCK OR LOGIC</h1>
+            <h2>Gacha Investation</h2>
+            <p>A chaotic experiment disguised as a finance show</p>
+            <button class="watch-btn">Watch Trailer</button>
+        </div>
+        <div class="hero-image">
+            <div class="image-card">
+                <div class="sparkle sparkle-1">✦</div>
+                <div class="sparkle sparkle-2">✦</div>
+                <img src="">
+            </div>
+        </div>
+    </section>
+
+    <div class="countdown">
+        <div class="time-box">
+            <span class="number" id="days">28</span>
+            <span class="label">Days</span>
+        </div>
+        <div class="time-box">
+            <span class="number" id="hours">03</span>
+            <span class="label">Hours</span>
+        </div>
+        <div class="time-box">
+            <span class="number" id="minutes">21</span>
+            <span class="label">Minutes</span>
+        </div>
+        <div class="time-box">
+            <span class="number" id="seconds">29</span>
+            <span class="label">Seconds</span>
+        </div>
+    </div>
+
+    <div class="contact-info">
+        <a href="mailto:luckandlogic@email.com" class="contact-btn">
+            <span>📧</span>
+            <span>luckandlogic@email.com</span>
+        </a>
+        <a href="#" class="contact-btn">
+            <span>📍</span>
+            <span>ITB Jatinangor</span>
+        </a>
+        <a href="tel:081234567" class="contact-btn">
+            <span>📞</span>
+            <span>081234567</span>
+        </a>
+    </div>
+
+    <div class="description">
+        <h3>Before the real experiment begins, we prepare the battlefield.</h3>
+        <p>This phase is all about getting comfortable, building hype and letting everyone feel the contrast between randomness and analyze — before real money enters the arena. No pressure. No regrets.</p>
+    </div>
+
+    <div class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <div class="carousel-slide">
+                    <img src="data:image/svg+xml,%3Csvg width='1000' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1000' height='400' fill='%23475569'/%3E%3Ctext x='50%25' y='45%25' font-family='Arial' font-size='32' fill='%2340e0d0' text-anchor='middle'%3EEVENT PHOTO 1%3C/text%3E%3Ctext x='50%25' y='55%25' font-family='Arial' font-size='20' fill='%23fff' text-anchor='middle'%3EPeople at Event%3C/text%3E%3C/svg%3E" alt="Event Photo 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="data:image/svg+xml,%3Csvg width='1000' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1000' height='400' fill='%23334155'/%3E%3Ctext x='50%25' y='45%25' font-family='Arial' font-size='32' fill='%2340e0d0' text-anchor='middle'%3EEVENT PHOTO 2%3C/text%3E%3Ctext x='50%25' y='55%25' font-family='Arial' font-size='20' fill='%23fff' text-anchor='middle'%3ETeam Discussion%3C/text%3E%3C/svg%3E" alt="Event Photo 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="data:image/svg+xml,%3Csvg width='1000' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1000' height='400' fill='%23475569'/%3E%3Ctext x='50%25' y='45%25' font-family='Arial' font-size='32' fill='%2340e0d0' text-anchor='middle'%3EEVENT PHOTO 3%3C/text%3E%3Ctext x='50%25' y='55%25' font-family='Arial' font-size='20' fill='%23fff' text-anchor='middle'%3EPresentation Time%3C/text%3E%3C/svg%3E" alt="Event Photo 3">
+                </div>
+            </div>
+            <button class="carousel-nav prev" id="prevBtn">◀</button>
+            <button class="carousel-nav next" id="nextBtn">▶</button>
+        </div>
+        <div class="carousel-dots" id="dotsContainer">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+        <div class="decorative-dots">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <script src="event.js"></script>
+</body>
 </html>
-<script src="event.js"></script>
