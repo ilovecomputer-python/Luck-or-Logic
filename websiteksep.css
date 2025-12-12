@@ -1,0 +1,61 @@
+body {
+    font-family: 'Poppins';
+    background: linear-gradient(180deg, #184E77 0%, #1E6091 52.4%, #168AAD 100%);
+}
+
+.t1 {
+    font-size: 90px;
+    font-weight: 700;
+}
+
+.t2 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.t3 {
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.boxes {
+    display: flex;
+}
+
+.c1, .c2, .c3, .c4 {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 1600px;
+    align-items: center;
+    margin-right: 30px;
+}
+.people {
+    width: 250px; 
+    height: 400px;
+}
+
+.tulisan {
+    font-weight: 400;
+}
+
+.nama {
+    font-weight: 700;
+    font-style: bold;
+    font-size : 30px;
+}
+
+.fakultas {
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.deskripsi {
+    font-size: 20px;
+}
+
+.icons:hover { 
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); 
+
+}
